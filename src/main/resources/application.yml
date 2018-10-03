@@ -1,0 +1,66 @@
+# additional values exposed in actuator info endpoint
+info:
+  app:
+    name:    Account Services
+    version: 0.0.1-SNAPSHOT
+
+# Base-App Library: Swagger feature
+cn:
+  app:
+    swagger:
+      enabled: true
+      scan-packages: com.nsld.snekkanti.accountservice
+      display:
+        title: Account Services
+        description: API Resources & Documentation
+        contact-name: Team Name
+        contact-email:
+        contact-url:
+        version: 0.0.1-SNAPSHOT
+        license:
+        license-url:
+        terms-of-service-url:
+    # Base-App Library: Application-Info-Header feature
+    application-info-header:
+      enabled: true
+      attributes:
+        name: ${spring.application.name}
+        version: 0.0.1-SNAPSHOT
+    # Base-App Library: Request-Info-Header feature
+    request-info-header:
+      enabled: true
+    # Base-App Library: Exception Handler feature -- adopts common error structure
+    exception-handler:
+      enabled: true
+    # Base-App Library: Local Discovery Client -- to re-enable connecting to local discovery service set env variable CN_APP_DISABLE_LOCAL_DISCOVERY_CLIENT_ENABLED=false
+    disable-local-discovery-client:
+      enabled:true
+
+
+# Other
+management:
+  context-path: /actuator
+  add-application-context-header: false
+
+
+
+# Jackson serialization of dates
+spring:
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+
+
+logging:
+  level:
+    ROOT: DEBUG
+    org.springframework.web: DEBUG
+
+server:
+  port: 8081
+
+security:
+  basic:
+    enabled: false
+
+
