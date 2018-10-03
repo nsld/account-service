@@ -43,7 +43,7 @@ The following link points to a lightweight distribution of Eclipse Oxygen that a
 https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/2/eclipse-java-oxygen-2-win32-x86_64.zip
 
 The following are the steps to configure your Eclipse to support Lombok:
- 1. Download the Lombok jar from http://www.nexus.ford.com/repository/external-proxy-group/org/projectlombok/lombok/1.16.20/lombok-1.16.20.jar
+ 1. Download the Lombok jar
  2. Double-click the downloaded Lombok jar. Lombok Installer should pop-up. (If not, then try running the command: java -jar lombok.jar)
  3. In the Installer, select or browse your Eclipse location. Click "Install / Update" button.
  4. Restart Eclipse.
