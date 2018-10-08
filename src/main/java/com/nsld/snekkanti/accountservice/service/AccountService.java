@@ -34,6 +34,10 @@ public class AccountService {
             return AccountResponse.builder().message(Constants.INVALID_ACCOUNT_ADD_REQUEST)
                     .status(HttpStatus.BAD_REQUEST).build();
         }
+        if(accountRepository.existsByAccountNumber(request.getAccountNumber())){
+            return AccountResponse.builder().message(Constants.DUPLICATE_ACCOUNT_ADD_REQUEST)
+                    .status(HttpStatus.BAD_REQUEST).build();
+        }
         Account account = Account.builder().firstName(request.getFirstName())
                                            .secondName(request.getSecondName())
                                            .accountNumber(request.getAccountNumber()).build();

@@ -71,6 +71,14 @@ public class AccountServiceTest {
     }
 
     @Test
+    public void testAddAccount_Bad_Request_Duplicate_Account_Number(){
+        AccountRequest accountRequest = AccountRequest.builder().firstName("Suresh").secondName("Nekkanti").accountNumber(123).build();
+        AccountResponse accountResponse = accountService.addAccount(accountRequest);
+        assertEquals(HttpStatus.BAD_REQUEST, accountResponse.getStatus());
+        assertEquals(Constants.DUPLICATE_ACCOUNT_ADD_REQUEST, accountResponse.getMessage());
+    }
+
+    @Test
     public void testAddAccount(){
         AccountRequest accountRequest = AccountRequest.builder().firstName("Suresh").secondName("Nekkanti").accountNumber(456).build();
         AccountResponse accountResponse = accountService.addAccount(accountRequest);

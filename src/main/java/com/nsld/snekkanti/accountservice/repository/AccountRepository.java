@@ -10,4 +10,5 @@ public interface AccountRepository extends JpaRepository<Account, Integer> {
     List<Account> findAll();
     Account save(Account account);
     void deleteById(Integer integer);
+    Boolean existsByAccountNumber(Integer accountNumber);
 }
